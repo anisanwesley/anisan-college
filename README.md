@@ -5,7 +5,7 @@ anisan-college
 
 For college work, I'll put here whatever evolved during the course of Information Systems in Uniplac 
 
-# # # # Projects in this repository 
+#### Projects in this repository 
 * Anisoket 
    * Classes in C # and Java that facilitate the use of sockets 
    * does in 3 lines which need to create a socket with 11 in the conventional model 

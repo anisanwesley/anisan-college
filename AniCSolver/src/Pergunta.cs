@@ -11,13 +11,13 @@ namespace AniCSolver.Core
        internal Variavel Variavel { get; set; }
        internal string Descricao { get; set; }
 
-       internal string Motivo
+       public string Descricao
        {
            get
            {
                return String.IsNullOrWhiteSpace(_motivo)
-                   ?"Preciso descobrir o valor de "+Variavel.Nome 
-                   :_motivo;
+                   ? "Preciso descobrir o valor de " + Variavel.Nome
+                   : _motivo;
            }
            set
            {
@@ -25,7 +25,22 @@ namespace AniCSolver.Core
            }
        }
 
+       public string Motivo
+       {
+           get
+           {
+               return String.IsNullOrWhiteSpace(_descricao)
+                   ?"Qual valor de "+Variavel.Nome+" ?"
+                   : _descricao;
+           }
+           set
+           {
+               _descricao = value;
+           }
+       }
+
        private string _motivo;
+       private string _descricao;
 
        public override string ToString()
        {

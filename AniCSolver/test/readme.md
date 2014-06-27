@@ -1,0 +1,1 @@
+﻿Este exemplo de teste está baseado [nesta árvode de soluções](https://www.examtime.com/pt-BR/p/1015829).

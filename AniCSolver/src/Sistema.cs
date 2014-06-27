@@ -37,8 +37,10 @@ namespace AniCSolver.Core
             if (!String.IsNullOrWhiteSpace(Solucao)) return Solucao;
 
             var pergunta = Perguntar();
-
+            
             if (resposta.Contains("?")) return pergunta.Motivo;
+
+			resposta = resposta.ToLower();
 
             var condicoes = _condicoes.FindAll(c => c.Variavel == pergunta.Variavel);
 
@@ -173,9 +175,20 @@ namespace AniCSolver.Core
                 }
                 if (linha.Contains("PERGUNTAS"))
                     start = true;
+             }
+
+            foreach (var variavel in _variaveis)
+            {
+                var key = variavel.Value.Nome;
+                if (!_perguntas.ContainsKey(key))
+                {
+                    _perguntas.Add(key, new Pergunta
+                    {
+                        Variavel = variavel.Value
+                    });
+                }
             }
         }
-
 
 
         private void SetObjetivos()
