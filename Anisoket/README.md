@@ -1,11 +1,11 @@
-Select Language: **English**, [Portuguese](https://github.com/AnisanWesley/Anisoket/blob/master/README-pt.md)
+Select Language: **English**, [Portuguese](https://github.com/AnisanWesley/anisan-college/blob/master/Anisoket/README-pt.md)
 Anisoket
 ========
 
 Those classes have by objective simplify the configuration and usability of sockets in supported languages:
-* [C#](https://github.com/AnisanWesley/Anisoket/blob/master/src/csharp/SoketSupport.cs)
-* [Java](https://github.com/AnisanWesley/Anisoket/blob/master/src/java/SoketSupport.java)
-* based in this [pseudocode](https://github.com/AnisanWesley/Anisoket/blob/master/src/pseudo-code/SoketSupport.pc)
+* [C#](https://github.com/AnisanWesley/anisan-college/blob/master/Anisoket/src/csharp/SoketSupport.cs)
+* [Java](https://github.com/AnisanWesley/anisan-college/blob/master/Anisoket/src/java/SoketSupport.java)
+* based in this [pseudocode](https://github.com/AnisanWesley/anisan-college/blob/master/Anisoket/src/pseudo-code/SoketSupport.pc)
  
 In only three steps is possible avoid all the rework of initialize, configure and use different sockets for clients and servers.
 Anisoket allows you to use three lines to do what is traditionally done in 11 lines.
@@ -110,7 +110,7 @@ private string Conect(Get getMethod,string query)
 Fork-me and help to improve this micro framework (;
 
 ##Extras
-[Check all changesets](https://github.com/AnisanWesley/Anisoket/blob/master/Changelog.md) and [examples](https://github.com/AnisanWesley/Anisoket/tree/master/samples)
+[Check all changesets](https://github.com/AnisanWesley/anisan-college/blob/master/Anisoket/Changelog.md) and [examples](https://github.com/AnisanWesley/anisan-college/tree/master/Anisoket/samples)
 
 ####Last Changeset #140606 ver 1.2.5
 **[c#]** [java]
