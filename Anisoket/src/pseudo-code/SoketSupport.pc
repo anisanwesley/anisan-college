@@ -1,0 +1,97 @@
+STRUCTURE TYPECONNECTION
+|	NotSet
+|	Client 
+|	Server
+END TYPECONNECTION
+
+VARIABLES
+|	TypeConnection,
+|	NetworkStream,
+|	Writer,
+|	Reader,
+|	Server,
+|	Client,
+|	Ip,
+|	Port
+|	IsStarted
+ENDVARIABLES
+
+STRUCTURE SOCKETSUPPORT
+|
+|	PROCEDURE CONFIGURE
+|	|	convert and valide ip
+|	|	convert and valide port
+|	|	SWICH TypeConnection
+|	|	|	CASE TypeConnection is Server
+|	|	|	|	initialize server with ip and port
+|	|	|	|	start Server
+|	|	|	END CASE
+|	|	|	CASE TypeConnection is Client
+|	|	|	|	initialize client
+|	|	|	END CASE
+|	|	END SWICH
+|	END CONFIGURE
+|	sets IsStarted to true
+|	RETURNS IsStarted
+|	END CONFIGURE 
+|
+|	PROCEDURE SENDDATA(data)
+|	|
+|	|	TRY
+|	|	|	IF
+|	|	|	|	SWITCH TypeConnection
+|	|	|	|	|	CASE TypeConnection is Server
+|	|	|	|	|	|	write data in Writer
+|	|	|	|	|	|	flushes writer 
+|	|	|	|	|	|	closes soket
+|	|	|	|	|	END CASE	
+|	|	|	|	|	CASE TypeConnection is Client
+|	|	|	|	|	|	initialize client with ip and port
+|	|	|	|	|	|	initialize NetworkStream
+|	|	|	|	|	|	initialize Writer
+|	|	|	|	|	|	initialize Reader
+|	|	|	|	|	|	IF Client is connected
+|	|	|	|	|	|	|	write data in Writer
+|	|	|	|	|	|	|	flushes writer
+|	|	|	|	|	|	END IF
+|	|	|	|	|	END CASE
+|	|	|	|	|	CASE TypeConnection is not set
+|	|	|	|	|	|	RETURNS false;
+|	|	|	|	|	END CASE
+|	|	|	|	END SWITCH
+|	|	|	END IF
+|	|	|	RETURNS IsStarted
+|	|	END TRY
+|	|	CATCH
+|	|	|	RETURNS false
+|	|	END CATCH
+|	|
+|	END SENDDATA
+|	
+|	PROCEDURE RECEIVEDATA
+|	|	TRY
+|	|	|	initialize data
+|	|	|	IF IsStarted
+|	|	|	SWITCH TypeConnection
+|	|	|	|	CASE TypeConnection is server
+|	|	|	|	|	Accept socket
+|	|	|	|	|	initialize NetworkStrem with socket
+|	|	|	|	|	initialize Reader with NetworkStrem
+|	|	|	|	|	RETURNS Reader's reading
+|	|	|	|	END CASE
+|	|	|	|	CASE TypeConnection is client
+|	|	|	|	|	data receives reader's reading
+|	|	|	|	|	close client
+|	|	|	|	END CASE
+|	|	|	END SWITCH
+|	|	|	END IF
+|	|	|	RETURNS data
+|	|	END TRY
+|	|	CATCH
+|	|	|	RETURNS Exception message
+|	|	END CATCH
+|	END RECEIVEDATA
+|		
+|END SOCKETSUPPORT
+
+
