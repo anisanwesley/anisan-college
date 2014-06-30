@@ -28,7 +28,7 @@ var sistema = new Sistema("c:\\temp\\base.txt", "c:\\temp\\code.txt");
 
 Now we have solutions name, authors and abstract with `solucao.Nome`, `solucao.Autores` and `solucao.Resumo` respectively and to all Metadata extraction from  ExSinta.
 
-#### 2 -ask to system with  `sistema.Perguntar()` **(optional)**
+#### 2 - Ask to system with  `sistema.Perguntar()` **(optional)**
 This method will return the next question to make, this is::
 * `Variavel` - Variable related to that question
 * `Descrição` - Question's description
@@ -70,7 +70,7 @@ But is recommended ever call `sistema.Perguntar()` to know what are responding, 
 ---
 ##Contribuing
 
-**This project was made for a college homework, so just solved my problem and some classmates, works with quite a lot but still has some bugs with diverse metadata it is not enough generic.
+**This project was made for a college homework, so just solved my problem based in [this issue](https://www.examtime.com/pt-BR/mind_maps/1015829/), works with quite a lot but still has some bugs with diverse metadata it is not enough generic.
 Keep up the will to make a Fork and help make this Expansion Shell even more complete..**
 ####Known Limitations ( a.k.a. Pending Implementations)
 

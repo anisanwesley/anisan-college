@@ -73,7 +73,7 @@ Mas o mais correto é chamar `sistema.Perguntar()` para saber o que se está res
 ---
 ##Contribuição
 
-**Este projeto foi feito para um trabalho da faculdade, apenas resolveu o problema meu e de alguns colegas da turma, funciona com bastante coisa mas ainda apresenta alguns bugs com metadados diversificados pois não está sulficientemente genérico.
+**Este projeto foi feito para um trabalho da faculdade baseado [nesta problemática](https://www.examtime.com/pt-BR/mind_maps/1015829/), apenas resolveu o problema meu e de alguns colegas da turma, funciona com bastante coisa mas ainda apresenta alguns bugs com metadados diversificados pois não está sulficientemente genérico.
 Fique-se a vontade para fazer um Fork e ajudar a deixar esta Expansion Shell ainda mais completa.**
 ####Limitações conhecidas ( a.k.a. implementações pendentes)
 
