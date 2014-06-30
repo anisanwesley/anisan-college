@@ -2,7 +2,7 @@ Select Language: **English**, [Portuguese](https://github.com/AnisanWesley/anisa
 AniCSolver
 ========
 (Any Common Solver)
-####Requisito: Conhecimento básico no programa Expert Sinta.
+####Requires: basic knowledge in Expert Sinta.
 
 This is a expansion shell for [Expert Sinta](http://www.lia.ufc.br/~bezerra/exsinta/). [Download](ftp://ftp.lia.ufc.br/sinta/sinta.zip). 
 
