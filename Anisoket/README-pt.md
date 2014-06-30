@@ -1,4 +1,4 @@
-Select Language: [English](https://github.com/AnisanWesley/anisan-college/blob/master/Anisoket/README.md), **Portuguese**
+Select Language: [English](https://github.com/AnisanWesley/anisan-college/blob/master/Anisoket), **Portuguese**
 Anisoket
 ========
 

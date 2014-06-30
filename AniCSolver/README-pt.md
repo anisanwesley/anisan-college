@@ -1,11 +1,12 @@
-Select Language: [English](https://github.com/AnisanWesley/anisan-college/blob/master/Anisoket/README.md), **Portuguese**
+Select Language: [English](https://github.com/AnisanWesley/anisan-college/blob/master/AniCSolver), **Portuguese**
 AniCSolver
 ========
 (Any Common Solver)
 ####Requisito: Conhecimento básico no programa Expert Sinta.
 
-Esta é uma extensão para a shell do [Expert Sinta](http://www.lia.ufc.br/~bezerra/exsinta/). [(download)](ftp://ftp.lia.ufc.br/sinta/sinta.zip)
-Basicamente seu objetivo é ler os arquivos gerados pela base do Expert Sinta e traduzir tudo em objetos e disponibilizar isso para o usuário da classe, você terá acesso à componentes da Metadata¹ como:
+Esta é uma extensão para a shell do [Expert Sinta](http://www.lia.ufc.br/~bezerra/exsinta/). [Download](ftp://ftp.lia.ufc.br/sinta/sinta.zip). 
+
+Basicamente seu objetivo é ler os arquivos gerados pela base do Expert Sinta e traduzir tudo em objetos para disponibilizar isso para o usuário da classe em formato de **Metadata¹** como:
 * Variaveis
 * Valores
 * Regras
@@ -44,27 +45,35 @@ Pode passar uma quantidade indeterminada de parâmetros, se souber as respostas 
 **Exemplo:** `sistema.Responder("sim","s","n","alternativa a","alternativa c","nao")`. 
 Cada parametro responderá a pergunta correspondente à ordem que as regras forem selecionadas.
 
-Mas o mais correto é chamar `sistema.Perguntar()` para saber o que se está respondendo.
+Mas o mais correto é chamar `sistema.Perguntar()` para saber o que se está respondendo pois a ordem das regras selecionadas é volátil.
 
-`Responder`pode aceitar estes tipos valores dependendo da próxima pergunta:
-* **Verdadeiro/Falso:** para perguntas deste tipo, ele simplesmente atribui como verdade o texto que conter a letra `s`
+`Responder`pode aceitar estes tipos valores dependendo (ou não) da próxima pergunta:
+* **Verdadeiro/Falso:** para perguntas deste tipo, ele simplesmente atribui como verdade o texto que conter a letra `S`
 	*	Exemplo: Pode mandar `"sim"`, `"yes"` ou `"s"` que será como responder `verdadeiro`, caso contrario, será como responder `falso`.
 * **Valores predefinidos**: Deve-se responder exatamente como as opções.
-	*	Exemplo: `Qual tipo de bips da placa mãe?` Opções: `curtos`,`longos` e `ambos`. Neste caso `Ambos` ou `ambos` seriam respostas válidas
+	*	Exemplo: `Qual tipo de bips  que a placa mãe produz no boot?` Opções: `curtos`,`longos` e `ambos`. Neste caso `Ambos` ou `ambos` seriam respostas válidas
 * **Acessar o motivo da pergunta:** pode ser feita de duas formas:
 	*	Adicionando um ponto de interrogação à resposta. Ex: `sistema.Responder("motivo?")`,`sistema.Responder("por que?")`.
 	*	Acessando `sistema.Perguntar().Motivo`, já que este retorna um objeto do tipo `Pergunta`
+* **Comandos avançados:** Digitando `:` e em seguida um destes comandos:
+  *  `:variaveis` - retorna todas as variaveis do sistema
+  *  `:valores` - retorna todos os valores do sistema
+  *  `:regras` - retorna todas as regras do sistema
+  *  `:perguntas` - retorna todas as perguntas do sistema
+  *  `:condicoes` - retorna todas as condicoes do sistema agrupadas por regras
+  *  `:help` - tráz um texto de ajuda com todo este conteúdo
 
 **Note:** Nada é case-sensitive, `'motivo' == 'mOtiVO'`
 
 ##Métodos Auxiliares
 * `GetRegrasRegeitadas()`
 * `GetRegrasAtivas()`
+* `GetCondicoesByRegra(int codigoRegra)`
 
 ---
 ##Contribuição
 
-**Este projeto foi feito para um trabalho da faculdade, apenas resolveu o problema meu e de alguns colegas da turma, funciona com bastante coisa mas ainda apresenta varios bugs com metadados diversificados pois não está sulficientemente genérico.
+**Este projeto foi feito para um trabalho da faculdade, apenas resolveu o problema meu e de alguns colegas da turma, funciona com bastante coisa mas ainda apresenta alguns bugs com metadados diversificados pois não está sulficientemente genérico.
 Fique-se a vontade para fazer um Fork e ajudar a deixar esta Expansion Shell ainda mais completa.**
 ####Limitações conhecidas ( a.k.a. implementações pendentes)
 
@@ -80,4 +89,4 @@ Fique-se a vontade para fazer um Fork e ajudar a deixar esta Expansion Shell ain
 * Metadata deve conter apenas um objetivo. 
 
 ##Glossário
-¹ **Metadata** - é o resultado lógico proveniente dos dois arquivos que são gerados pelo Expert Sinta: "Base de conhecimento" e "Códigos"
+¹ **Metadata** - é a informação sobre os dados contidos nos dois arquivos que são gerados pelo Expert Sinta: "Base de conhecimento" e "Códigos"

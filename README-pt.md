@@ -1,4 +1,4 @@
-Select Language: [English](https://github.com/AnisanWesley/anisan-college/blob/master/README.md), **Portuguese**
+Select Language: [English](https://github.com/AnisanWesley/anisan-college/), **Portuguese**
 
 anisan-college
 ==============
@@ -7,11 +7,11 @@ Para trabalhos de faculdade, vou colocar aqui o que for evoluindo ao decorrer do
 
 ####Projetos neste repositório
 * Anisoket
-  * Classes em C# e Java que facilitam o uso de sockets
-  * Resume em 3 linhas o que precisaria de 11 para criar um socket no modelo convencional
+  *	Classes em C# e Java que facilitam o uso de sockets
+  *	Resume em 3 linhas o que precisaria de 11 para criar um socket no modelo convencional
 * AniCSolver
-  * Sheel complementar para o Expert Sinta
-  * Lê os arquivos "base" e "codigos" gerados pelo Expert Sinta e traduz em uma interface simples de ser navegada
+  *	Sheel complementar para o Expert Sinta
+  *	Lê os arquivos "base" e "codigos" gerados pelo Expert Sinta e traduz em uma interface simples de ser navegada
 
 
 

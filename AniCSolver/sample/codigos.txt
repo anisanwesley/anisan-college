@@ -1,0 +1,128 @@
+--------------------------------------------------------------------------------
+CÓDIGOS INTERNOS DE BASE DE CONHECIMENTO
+SOBRE O SISTEMA ESPECIALISTA
+  -- Nome:    SEM NOME
+  -- Autores: 
+
+SOBRE OS ARQUIVOS
+  Arquivo original: D:\DROPBOX\UNIPLAC\IA\ATIVIDADES\VINHOS.BCM
+  O sistema não possui recursos de ajuda.
+--------------------------------------------------------------------------------
+
+Variáveis - CÓDIGO, NOME
+
+1, Vinho
+2, Cor
+3, Tipo
+4, Molho
+5, TemMolho
+6, Prato
+
+Variáveis - NOME, CÓDIGO
+
+Cor, 2
+Molho, 4
+Prato, 6
+TemMolho, 5
+Tipo, 3
+Vinho, 1
+
+Valores - CÓDIGO, NOME, CÓDIGO DA VARIÁVEL, POSIÇÃO
+
+1, Cabernet Sauvignon, 1, 1
+2, Riesling, 1, 2
+3, Pinot Noir, 1, 3
+4, Sauvignon Blanc, 1, 4
+5, Branco, 2, 1
+6, Tinto, 2, 2
+7, Seco, 3, 1
+8, Suave, 3, 2
+9, Tomate, 4, 1
+10, Picante, 4, 2
+11, Frango, 6, 1
+12, Peixe, 6, 2
+13, Massa, 6, 3
+14, CarneVermelha, 6, 4
+
+Valores - NOME, CÓDIGO, CÓDIGO DA VARIÁVEL, POSIÇÃO
+
+Branco, 5, 2, 1
+Cabernet Sauvignon, 1, 1, 1
+CarneVermelha, 14, 6, 4
+Frango, 11, 6, 1
+Massa, 13, 6, 3
+Peixe, 12, 6, 2
+Picante, 10, 4, 2
+Pinot Noir, 3, 1, 3
+Riesling, 2, 1, 2
+Sauvignon Blanc, 4, 1, 4
+Seco, 7, 3, 1
+Suave, 8, 3, 2
+Tinto, 6, 2, 2
+Tomate, 9, 4, 1
+
+Valores - CÓDIGO DA VARIÁVEL, CÓDIGO, NOME, POSIÇÃO
+
+1, 4, Sauvignon Blanc, 4
+1, 2, Riesling, 2
+1, 3, Pinot Noir, 3
+1, 1, Cabernet Sauvignon, 1
+2, 6, Tinto, 2
+2, 5, Branco, 1
+3, 8, Suave, 2
+3, 7, Seco, 1
+4, 10, Picante, 2
+4, 9, Tomate, 1
+6, 12, Peixe, 2
+6, 14, CarneVermelha, 4
+6, 11, Frango, 1
+6, 13, Massa, 3
+
+Regras - POSIÇÃO, NOME, CÓDIGO
+
+1, Carne Tinta, 1
+2, Frango Peixe Branco, 2
+3, Sem molho suave, 3
+4, Molho picante suave, 4
+5, Molho tomate seco, 5
+6, massa cabernet, 6
+7, branco suave riesling, 7
+8, branco seco blane, 8
+9, tinto suave pinot, 9
+10, tinto seco cabenet, 10
+
+Regras - CÓDIGO, NOME, POSIÇÃO
+
+1, Carne Tinta, 1
+2, Frango Peixe Branco, 2
+3, Sem molho suave, 3
+4, Molho picante suave, 4
+5, Molho tomate seco, 5
+6, massa cabernet, 6
+7, branco suave riesling, 7
+8, branco seco blane, 8
+9, tinto suave pinot, 9
+10, tinto seco cabenet, 10
+
+Regras - NOME, CÓDIGO, POSIÇÃO
+
+Frango Peixe Branco, 2, 2
+Carne Tinta, 1, 1
+branco suave riesling, 7, 7
+branco seco blane, 8, 8
+Molho picante suave, 4, 4
+Molho tomate seco, 5, 5
+Sem molho suave, 3, 3
+tinto seco cabenet, 10, 10
+tinto suave pinot, 9, 9
+massa cabernet, 6, 6
+
+--------------------------------------------------------------------------------
+Gerado com o Expert SINTA versão 1.1b
+(c) 1997 - Universidade Federal do Ceará
+           Laboratório de Inteligência Artificial
+           LIA/UFC
+
+           Utilize esses códigos na programação
+           de front-ends com a Expert SINTA VCL
+--------------------------------------------------------------------------------

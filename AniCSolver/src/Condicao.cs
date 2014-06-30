@@ -13,10 +13,11 @@ namespace AniCSolver.Core
         public Regra Regra { get; set; }
 
         internal bool Boolean { get; set; }
+        internal bool IsAcertiva { get; set; }
         public Status Status { get; set; }
         public override string ToString()
         {
-            return "["+Status+"] " + String.Format("{0} = {1}", Variavel.Nome, (Valor == null ? (Boolean ? "Sim" : "Não") : Valor.Nome));
+              return (IsAcertiva?"ENTÂO":"["+Status+"]" )+ String.Format(" {0} = {1}", Variavel.Nome, (Valor == null ? (Boolean ? "Sim" : "Não") : Valor.Nome));
 
         }
         

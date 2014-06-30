@@ -17,6 +17,8 @@ namespace AniCSolver.Core
             try
             {
                 Console.Clear();
+                Console.WriteLine("Digite 'help' para obter ajuda.\n");
+				
                 var sistema = new Sistema("c:\\temp\\base.txt", "c:\\temp\\codigos.txt");
                 Console.WriteLine(sistema.Resumo);
                 for (; sistema.Solucao == null;)

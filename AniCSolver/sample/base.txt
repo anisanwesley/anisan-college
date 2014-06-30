@@ -1,0 +1,127 @@
+--------------------------------------------------------------------------------
+SOBRE O SISTEMA ESPECIALISTA
+  -- Nome:    SEM NOME
+  -- Autores: 
+
+Operador de maior precedência: conjunção
+Fator de confiança mínimo para aceitação de regra: 50
+
+SOBRE OS ARQUIVOS
+  Arquivo original: D:\DROPBOX\UNIPLAC\IA\ATIVIDADES\VINHOS.BCM
+  O sistema não possui recursos de ajuda.
+--------------------------------------------------------------------------------
+
+VARIÁVEIS
+
+  Cor
+    Valores:
+      Tinto
+      Branco
+    Tipo:
+      univalorada
+  Molho
+    Valores:
+      Picante
+      Tomate
+    Tipo:
+      univalorada
+  Prato
+    Valores:
+      Peixe
+      CarneVermelha
+      Frango
+      Massa
+    Tipo:
+      univalorada
+  TemMolho
+    Tipo:
+      univalorada
+  Tipo
+    Valores:
+      Suave
+      Seco
+    Tipo:
+      univalorada
+  Vinho
+    Valores:
+      Sauvignon Blanc
+      Riesling
+      Pinot Noir
+      Cabernet Sauvignon
+    Tipo:
+      univalorada
+
+OBJETIVOS
+
+  Vinho
+
+REGRAS
+
+  Regra 1
+    SE Prato = CarneVermelha
+    ENTÃO Cor = Branco CNF 100%
+
+  Regra 2
+    SE Prato = Frango
+    OU Prato = Peixe
+    ENTÃO Cor = Branco CNF 100%
+
+  Regra 3
+    SE TemMolho = Não
+    ENTÃO Tipo = Suave CNF 100%
+
+  Regra 4
+    SE TemMolho = Sim
+    E  Molho = Picante
+    ENTÃO Tipo = Suave CNF 100%
+
+  Regra 5
+    SE TemMolho = Sim
+    E  Molho = Tomate
+    ENTÃO Tipo = Seco CNF 100%
+
+  Regra 6
+    SE Prato = Massa
+    ENTÃO Vinho = Cabernet Sauvignon CNF 100%
+
+  Regra 7
+    SE Cor = Branco
+    E  Tipo = Suave
+    ENTÃO Vinho = Riesling CNF 100%
+
+  Regra 8
+    SE Cor = Branco
+    E  Tipo = Seco
+    ENTÃO Vinho = Sauvignon Blanc CNF 100%
+
+  Regra 9
+    SE Cor = Tinto
+    E  Tipo = Suave
+    ENTÃO Vinho = Pinot Noir CNF 100%
+
+  Regra 10
+    SE Cor = Tinto
+    E  Tipo = Seco
+    ENTÃO Vinho = Cabernet Sauvignon CNF 100%
+
+PERGUNTAS
+
+  Variável:Cor
+     Pergunta:"Qual cor?"
+  Variável:Molho
+     Pergunta:"Qual molho?"
+  Variável:Prato
+     Pergunta:"Qual prato?"
+  Variável:TemMolho
+     Pergunta:"Gostaria de molho?"
+  Variável:Tipo
+     Pergunta:"Qual tipo do molho?"
+  Variável:Vinho
+     Pergunta:"Qual vinho?"
+
+--------------------------------------------------------------------------------
+Gerado com o Expert SINTA versão 1.1b
+(c) 1997 - Universidade Federal do Ceará
+           Laboratório de Inteligência Artificial
+           LIA/UFC
+--------------------------------------------------------------------------------

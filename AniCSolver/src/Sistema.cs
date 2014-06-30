@@ -20,7 +20,7 @@ namespace AniCSolver.Core
 
         public Pergunta Perguntar()
         {
-            var condicao = GetNextCondicao();
+            var condicao = _condicoes.First(c => c.Status == Status.Desconhecido);
             return _perguntas[condicao.Variavel.Nome];
         }
 
@@ -34,13 +34,17 @@ namespace AniCSolver.Core
 
         public string Responder(string resposta)
         {
-            if (!String.IsNullOrWhiteSpace(Solucao)) return Solucao;
-
+            resposta = resposta.ToLower();
+         
             var pergunta = Perguntar();
-            
+
             if (resposta.Contains("?")) return pergunta.Motivo;
 
-			resposta = resposta.ToLower();
+            if (resposta==("help")) return Help;
+
+            if (resposta.Contains(":")) return GetMetadata(resposta.Split(':')[1]);
+
+            if (!String.IsNullOrWhiteSpace(Solucao)) return Solucao;
 
             var condicoes = _condicoes.FindAll(c => c.Variavel == pergunta.Variavel);
 
@@ -90,26 +94,67 @@ namespace AniCSolver.Core
             return null;
         }
 
-        #region Métodos privados
+        private string GetMetadata(string command)
+        {
+            var sb = new StringBuilder();
+
+            switch (command)
+            {
+                case "variaveis":
+                    foreach (var v in _variaveis)
+                        sb.AppendLine(v.ToString());
+                    break;
+                case "valores":
+                    foreach (var v in _valores)
+                        sb.AppendLine(v.ToString());
+                    break;
+                case "regras":
+                    foreach (var r in _regras)
+                        sb.AppendLine(r.ToString());
+                    break;
+                case "perguntas":
+                    foreach (var p in _perguntas)
+                        sb.AppendLine(p.ToString());
+                    break;
+                case "condicoes":
+                    foreach (var r in _regras.Select(r=>r.Value))
+                    {
+                        var condicoes = GetCondicoesByRegra(r.Codigo);
+                        sb.AppendLine("\n REGRA "+r.Codigo+" "+(r.Ativa?"":"[Regeitada]"));
+                        foreach (var c in condicoes)
+                            sb.AppendLine("    " + c);
+                        sb.AppendLine("    " + r.Assertiva);
+                    }
+                    break;
+                case "help":
+                    sb.AppendLine(Help);
+                    break;
+            }
+
+            return sb.ToString();
+        }
+
+
+        #endregion
+
+        #region Métodos helpers
         public IEnumerable<Regra> GetRegrasRegeitadas()
         {
             return _regras.ToList().FindAll(r => r.Value.Regeitada).Select(r=>r.Value);
         }
-
-       private Condicao GetNextCondicao()
-        {
-            return _condicoes.First(c => c.Status == Status.Desconhecido);
-        }
         public IEnumerable<Regra> GetRegrasAtivas()
         {
             return _regras.ToList().FindAll(r => r.Value.Ativa).Select(r => r.Value).ToList();
+        }
+        public IEnumerable<Condicao> GetCondicoesByRegra(int codigo)
+        {
+            return _condicoes.FindAll(c=>c.Regra.Codigo==codigo);
         }
         #endregion
 
         
 
 
-        #endregion
 
         #region Listas
         
@@ -123,6 +168,25 @@ namespace AniCSolver.Core
 
         #region Geradores do construtor
 
+        public static string Help
+        {
+            get
+            {
+                return @"
+1 . Responda uma pergunta do tipo Verdadeiro/Falso com Sim ou Não
+2 . Responda perguntas com mais de três opções indicando exatamente um dos valores informados
+3 . Para saber o motivo da pergunta, digite '?'
+4 . Para um comando personalizado, digite ':<comando>'
+4a. Lista de comandos:
+    ':variaveis' - retorna todas as variaveis do sistema
+    ':valores' - retorna todos os valores do sistema
+    ':regras' - retorna todas as regras do sistema
+    ':perguntas' - retorna todas as perguntas do sistema
+    ':condicoes' - retorna todas as condicoes do sistema agrupadas por regras
+    ':help' - exibe esta ajuda
+";
+            }
+        }
         private readonly string[] _linhasCode;
         private readonly string[] _linhasDescription;
 
@@ -175,8 +239,9 @@ namespace AniCSolver.Core
                 }
                 if (linha.Contains("PERGUNTAS"))
                     start = true;
-             }
+            }
 
+            //Relaciona pergunta/variavel e cria pergunta caso nao exista
             foreach (var variavel in _variaveis)
             {
                 var key = variavel.Value.Nome;
@@ -189,6 +254,7 @@ namespace AniCSolver.Core
                 }
             }
         }
+
 
 
         private void SetObjetivos()
@@ -374,7 +440,7 @@ namespace AniCSolver.Core
 
                             }
 
-                            //seta "Então"
+                            //seta assertiva ('entao')
                             if (linha.Contains(" ENTÃO "))
                             {
                                 var temp = linha.Split('O');
@@ -411,6 +477,7 @@ namespace AniCSolver.Core
                                     if (valor == "Sim") condicao.Boolean = true;
                                 }
 
+                                condicao.IsAcertiva = true;
                                 regra.Assertiva = condicao;
 
 
@@ -423,6 +490,30 @@ namespace AniCSolver.Core
                 }
             }
         }
+
+        /*-------PSEUDOCODE DAS ESTRUTURAS DE LEITURA
+         * 
+         *  INITIALIZE start AS FALSE;
+            FOREACH fileline
+                SE start
+                    IF fileline IS NOT EMPTY
+                        IF fileline CONTAINS end reading tag
+                            BREAK;
+                        END IF
+
+                       Here goes implementation
+                             {...}
+          
+                    END IF
+                END SE
+
+                IF fileline CONTAINS start reading tag
+                    start IS TRUE;
+                END IF
+            END FOREACH
+         * 
+         */
+
 
         #endregion
 
