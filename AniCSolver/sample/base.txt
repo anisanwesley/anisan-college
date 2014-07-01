@@ -1,123 +1,516 @@
 --------------------------------------------------------------------------------
 SOBRE O SISTEMA ESPECIALISTA
-  -- Nome:    SEM NOME
-  -- Autores: 
+  -- Nome:    Relação de problemas de Hardware
+  -- Autores: ~Wesley A.Lemos e ~Felipe Amaral
+  -- Resumo:
+     =-=-=-=-=-=-=-=-=-=--
+     Anihardware         /
+     -=-=-=-=-=-=-=-=-=-
+     
+     Trabalho equivalente a obtensão de nota relativa à
+     disciplica de Inteligência Artificial, sob orientação de ~Sabrina Bet
+     
+     Link para o fluxo do sistema: 
+     https://www.examtime.com/pt-BR/mind_maps/1015829/
+     
+     7ª fase 
+     Sistemas de informação
+     UNIPLAC 
 
 Operador de maior precedência: conjunção
 Fator de confiança mínimo para aceitação de regra: 50
 
-SOBRE OS ARQUIVOS
-  Arquivo original: D:\DROPBOX\UNIPLAC\IA\ATIVIDADES\VINHOS.BCM
-  O sistema não possui recursos de ajuda.
 --------------------------------------------------------------------------------
 
 VARIÁVEIS
 
-  Cor
-    Valores:
-      Tinto
-      Branco
+  alavanca_zif_baixada
     Tipo:
       univalorada
-  Molho
-    Valores:
-      Picante
-      Tomate
+  autofalante_confiavel
     Tipo:
       univalorada
-  Prato
-    Valores:
-      Peixe
-      CarneVermelha
-      Frango
-      Massa
+  bateria_acima_3v
     Tipo:
       univalorada
-  TemMolho
+  bateria_confiavel
     Tipo:
       univalorada
-  Tipo
-    Valores:
-      Suave
-      Seco
+  bios_atualizada
     Tipo:
       univalorada
-  Vinho
+  bit_pariedade
+    Tipo:
+      univalorada
+  capacitor_estufado
+    Tipo:
+      univalorada
+  chave_seletora_correto
+    Tipo:
+      univalorada
+  computador_liga
+    Tipo:
+      univalorada
+  dvd_confiavel
+    Tipo:
+      univalorada
+  faz_bip
+    Tipo:
+      univalorada
+  floppy_confiavel
+    Tipo:
+      univalorada
+  hd_confiavel
+    Tipo:
+      univalorada
+  jumper_correto
+    Tipo:
+      univalorada
+  memorias_confiaveis
+    Tipo:
+      univalorada
+  monitor_confiavel
+    Tipo:
+      univalorada
+  overclok_ativado
+    Tipo:
+      univalorada
+  partida_direta_ok
+    Tipo:
+      univalorada
+  processador_confiavel
+    Tipo:
+      univalorada
+  qtd_bipes_curtos
     Valores:
-      Sauvignon Blanc
-      Riesling
-      Pinot Noir
-      Cabernet Sauvignon
+      11 bips curtos
+      9 bips curtos
+      7 bips curtos
+      5 bips curtos
+      1 bip curto
+      10 bips curtos
+      8 bips curtos
+      6 bips curtos
+      2 bips curtos
+    Tipo:
+      univalorada
+  qtd_bipes_longos
+    Valores:
+      4 bips longo
+      2 bips longo
+      3 bips longo
+      1 bip longo
+    Tipo:
+      univalorada
+  solucao
+    Valores:
+      Trocar Capacitores
+      Trocar BIOS
+      Trocar Bateria
+      Trocar Processador
+      Trocar Leitor de DVD
+      Verificar Frequencia do Processador
+      Trocar Estabilizador
+      Verificar Conectores da Placa-mãe
+      Limpar Memorias
+      Limpar Placa de Video
+      Corrigir Posição da Chave Seletora
+      Aumentar Timeout do Cache
+      Verificar Conectores de Vídeo
+      Resolvido
+      Trocar Monitor
+      Trocar Jumper
+      Trocar Floppy
+      Trocar Chipset
+      Trocar Cabo de Energia
+      Verificar Placas PCI  AGP ou PCI-Express
+      Trocar Memórias
+      Verificar Tomada ou Disjuntor
+      Atualizar BIOS
+      Aspirar Slots das memorias
+      Corrigir Alavanaca Zif
+      Corrigir Jumper
+      Desativar Parity Check no Setup
+      Trocar HD
+      Trocar Placa-mãe
+      Corrigir Autofalante
+      Corrigir Frequencia do Processador
+    Tipo:
+      univalorada
+  tensao_cabo
+    Tipo:
+      univalorada
+  tensao_estabilizador
+    Tipo:
+      univalorada
+  tensao_tomadas
+    Tipo:
+      univalorada
+  tipo_bip
+    Valores:
+      longos
+      ambos
+      curtos
+    Tipo:
+      univalorada
+  usa_pci
     Tipo:
       univalorada
 
 OBJETIVOS
 
-  Vinho
+  solucao
 
 REGRAS
 
   Regra 1
-    SE Prato = CarneVermelha
-    ENTÃO Cor = Branco CNF 100%
+    SE computador_liga = Sim
+    ENTÃO solucao = Resolvido CNF 100%
 
   Regra 2
-    SE Prato = Frango
-    OU Prato = Peixe
-    ENTÃO Cor = Branco CNF 100%
+    SE computador_liga = Não
+    E  faz_bip = Não
+    E  autofalante_confiavel = Não
+    ENTÃO solucao = Corrigir Autofalante CNF 100%
 
   Regra 3
-    SE TemMolho = Não
-    ENTÃO Tipo = Suave CNF 100%
+    SE computador_liga = Não
+    E  faz_bip = Não
+    E  autofalante_confiavel = Sim
+    E  tensao_cabo = Não
+    E  tensao_estabilizador = Sim
+    ENTÃO solucao = Trocar Cabo de Energia CNF 100%
 
   Regra 4
-    SE TemMolho = Sim
-    E  Molho = Picante
-    ENTÃO Tipo = Suave CNF 100%
+    SE computador_liga = Não
+    E  faz_bip = Não
+    E  autofalante_confiavel = Sim
+    E  tensao_cabo = Não
+    E  tensao_estabilizador = Não
+    E  tensao_tomadas = Sim
+    ENTÃO solucao = Trocar Estabilizador CNF 100%
 
   Regra 5
-    SE TemMolho = Sim
-    E  Molho = Tomate
-    ENTÃO Tipo = Seco CNF 100%
+    SE computador_liga = Não
+    E  faz_bip = Não
+    E  autofalante_confiavel = Sim
+    E  tensao_cabo = Não
+    E  tensao_estabilizador = Não
+    E  tensao_tomadas = Não
+    ENTÃO solucao = Verificar Tomada ou Disjuntor CNF 100%
 
   Regra 6
-    SE Prato = Massa
-    ENTÃO Vinho = Cabernet Sauvignon CNF 100%
+    SE computador_liga = Não
+    E  faz_bip = Não
+    E  autofalante_confiavel = Sim
+    E  chave_seletora_correto = Não
+    ENTÃO solucao = Corrigir Posição da Chave Seletora CNF 100%
 
   Regra 7
-    SE Cor = Branco
-    E  Tipo = Suave
-    ENTÃO Vinho = Riesling CNF 100%
+    SE computador_liga = Não
+    E  faz_bip = Não
+    E  autofalante_confiavel = Sim
+    E  memorias_confiaveis = Não
+    ENTÃO solucao = Trocar Memórias CNF 100%
 
   Regra 8
-    SE Cor = Branco
-    E  Tipo = Seco
-    ENTÃO Vinho = Sauvignon Blanc CNF 100%
+    SE computador_liga = Não
+    E  faz_bip = Não
+    E  autofalante_confiavel = Sim
+    E  usa_pci = Sim
+    ENTÃO solucao = Limpar Placa de Video CNF 100%
 
   Regra 9
-    SE Cor = Tinto
-    E  Tipo = Suave
-    ENTÃO Vinho = Pinot Noir CNF 100%
+    SE computador_liga = Não
+    E  faz_bip = Não
+    E  autofalante_confiavel = Sim
+    E  hd_confiavel = Não
+    ENTÃO solucao = Trocar HD CNF 100%
 
   Regra 10
-    SE Cor = Tinto
-    E  Tipo = Seco
-    ENTÃO Vinho = Cabernet Sauvignon CNF 100%
+    SE computador_liga = Não
+    E  faz_bip = Não
+    E  autofalante_confiavel = Sim
+    E  floppy_confiavel = Não
+    ENTÃO solucao = Trocar Floppy CNF 100%
+
+  Regra 11
+    SE computador_liga = Não
+    E  faz_bip = Não
+    E  autofalante_confiavel = Sim
+    E  dvd_confiavel = Não
+    ENTÃO solucao = Trocar Leitor de DVD CNF 100%
+
+  Regra 12
+    SE computador_liga = Não
+    E  faz_bip = Não
+    E  autofalante_confiavel = Sim
+    E  bateria_acima_3v = Não
+    ENTÃO solucao = Trocar Bateria CNF 100%
+
+  Regra 13
+    SE computador_liga = Não
+    E  faz_bip = Não
+    E  autofalante_confiavel = Sim
+    E  capacitor_estufado = Sim
+    ENTÃO solucao = Trocar Capacitores CNF 100%
+
+  Regra 14
+    SE computador_liga = Não
+    E  faz_bip = Não
+    E  autofalante_confiavel = Sim
+    E  processador_confiavel = Não
+    ENTÃO solucao = Trocar Processador CNF 100%
+
+  Regra 15
+    SE computador_liga = Não
+    E  faz_bip = Não
+    E  autofalante_confiavel = Sim
+    E  jumper_correto = Não
+    ENTÃO solucao = Corrigir Jumper CNF 100%
+
+  Regra 16
+    SE computador_liga = Não
+    E  faz_bip = Não
+    E  autofalante_confiavel = Sim
+    E  jumper_correto = Sim
+    E  partida_direta_ok = Sim
+    ENTÃO solucao = Trocar Jumper CNF 100%
+
+  Regra 17
+    SE computador_liga = Não
+    E  faz_bip = Não
+    E  tensao_cabo = Sim
+    E  autofalante_confiavel = Sim
+    E  chave_seletora_correto = Sim
+    E  memorias_confiaveis = Sim
+    E  usa_pci = Não
+    E  hd_confiavel = Sim
+    E  floppy_confiavel = Sim
+    E  dvd_confiavel = Sim
+    E  bateria_acima_3v = Sim
+    E  capacitor_estufado = Não
+    E  jumper_correto = Sim
+    E  partida_direta_ok = Não
+    E  processador_confiavel = Sim
+    ENTÃO solucao = Trocar Placa-mãe CNF 100%
+
+  Regra 18
+    SE computador_liga = Não
+    E  faz_bip = Sim
+    E  tipo_bip = ambos
+    ENTÃO solucao = Limpar Placa de Video CNF 100%
+
+  Regra 19
+    SE computador_liga = Não
+    E  faz_bip = Sim
+    E  tipo_bip = longos
+    E  qtd_bipes_longos = 1 bip longo
+    ENTÃO solucao = Limpar Memorias CNF 100%
+
+  Regra 20
+    SE computador_liga = Não
+    E  faz_bip = Sim
+    E  tipo_bip = longos
+    E  qtd_bipes_longos = 2 bips longo
+    E  bit_pariedade = Sim
+    ENTÃO solucao = Desativar Parity Check no Setup CNF 100%
+
+  Regra 21
+    SE computador_liga = Não
+    E  faz_bip = Sim
+    E  tipo_bip = longos
+    E  qtd_bipes_longos = 3 bips longo
+    E  bit_pariedade = Sim
+    ENTÃO solucao = Desativar Parity Check no Setup CNF 100%
+
+  Regra 22
+    SE computador_liga = Não
+    E  faz_bip = Sim
+    E  tipo_bip = longos
+    E  qtd_bipes_longos = 2 bips longo
+    E  bit_pariedade = Não
+    ENTÃO solucao = Limpar Memorias CNF 100%
+
+  Regra 23
+    SE computador_liga = Não
+    E  faz_bip = Sim
+    E  tipo_bip = longos
+    E  qtd_bipes_longos = 3 bips longo
+    E  bit_pariedade = Não
+    ENTÃO solucao = Limpar Memorias CNF 100%
+
+  Regra 24
+    SE computador_liga = Não
+    E  faz_bip = Sim
+    E  tipo_bip = longos
+    E  qtd_bipes_longos = 4 bips longo
+    ENTÃO solucao = Aspirar Slots das memorias CNF 100%
+
+  Regra 25
+    SE computador_liga = Não
+    E  faz_bip = Sim
+    E  tipo_bip = curtos
+    E  qtd_bipes_curtos = 1 bip curto
+    E  monitor_confiavel = Sim
+    ENTÃO solucao = Verificar Conectores de Vídeo CNF 100%
+
+  Regra 26
+    SE computador_liga = Não
+    E  faz_bip = Sim
+    E  tipo_bip = curtos
+    E  qtd_bipes_curtos = 1 bip curto
+    E  monitor_confiavel = Não
+    ENTÃO solucao = Trocar Monitor CNF 100%
+
+  Regra 27
+    SE computador_liga = Não
+    E  faz_bip = Sim
+    E  tipo_bip = curtos
+    E  qtd_bipes_curtos = 2 bips curtos
+    ENTÃO solucao = Verificar Conectores da Placa-mãe CNF 100%
+
+  Regra 28
+    SE computador_liga = Não
+    E  faz_bip = Sim
+    E  tipo_bip = curtos
+    E  qtd_bipes_curtos = 5 bips curtos
+    E  alavanca_zif_baixada = Sim
+    ENTÃO solucao = Trocar Processador CNF 100%
+
+  Regra 29
+    SE computador_liga = Não
+    E  faz_bip = Sim
+    E  tipo_bip = curtos
+    E  qtd_bipes_curtos = 5 bips curtos
+    E  alavanca_zif_baixada = Não
+    ENTÃO solucao = Corrigir Alavanaca Zif CNF 100%
+
+  Regra 30
+    SE computador_liga = Não
+    E  faz_bip = Sim
+    E  tipo_bip = curtos
+    E  qtd_bipes_curtos = 6 bips curtos
+    ENTÃO solucao = Trocar Chipset CNF 100%
+
+  Regra 31
+    SE computador_liga = Não
+    E  faz_bip = Sim
+    E  tipo_bip = curtos
+    E  qtd_bipes_curtos = 7 bips curtos
+    E  overclok_ativado = Sim
+    ENTÃO solucao = Corrigir Frequencia do Processador CNF 100%
+
+  Regra 32
+    SE computador_liga = Não
+    E  faz_bip = Sim
+    E  tipo_bip = curtos
+    E  qtd_bipes_curtos = 7 bips curtos
+    E  overclok_ativado = Não
+    ENTÃO solucao = Trocar Processador CNF 100%
+
+  Regra 33
+    SE computador_liga = Não
+    E  faz_bip = Sim
+    E  tipo_bip = curtos
+    E  qtd_bipes_curtos = 8 bips curtos
+    ENTÃO solucao = Limpar Placa de Video CNF 100%
+
+  Regra 34
+    SE computador_liga = Não
+    E  faz_bip = Sim
+    E  tipo_bip = curtos
+    E  qtd_bipes_curtos = 9 bips curtos
+    E  bios_atualizada = Não
+    ENTÃO solucao = Atualizar BIOS CNF 100%
+
+  Regra 35
+    SE computador_liga = Não
+    E  faz_bip = Sim
+    E  tipo_bip = curtos
+    E  qtd_bipes_curtos = 9 bips curtos
+    E  bios_atualizada = Sim
+    E  bateria_confiavel = Sim
+    ENTÃO solucao = Trocar BIOS CNF 100%
+
+  Regra 36
+    SE computador_liga = Não
+    E  faz_bip = Sim
+    E  tipo_bip = curtos
+    E  qtd_bipes_curtos = 9 bips curtos
+    E  bios_atualizada = Sim
+    E  bateria_confiavel = Não
+    ENTÃO solucao = Trocar Bateria CNF 100%
+
+  Regra 37
+    SE computador_liga = Não
+    E  faz_bip = Sim
+    E  tipo_bip = curtos
+    E  qtd_bipes_curtos = 10 bips curtos
+    ENTÃO solucao = Trocar Placa-mãe CNF 100%
+
+  Regra 38
+    SE computador_liga = Não
+    E  faz_bip = Sim
+    E  tipo_bip = curtos
+    E  qtd_bipes_curtos = 11 bips curtos
+    ENTÃO solucao = Aumentar Timeout do Cache CNF 100%
 
 PERGUNTAS
 
-  Variável:Cor
-     Pergunta:"Qual cor?"
-  Variável:Molho
-     Pergunta:"Qual molho?"
-  Variável:Prato
-     Pergunta:"Qual prato?"
-  Variável:TemMolho
-     Pergunta:"Gostaria de molho?"
-  Variável:Tipo
-     Pergunta:"Qual tipo do molho?"
-  Variável:Vinho
-     Pergunta:"Qual vinho?"
+  Variável:alavanca_zif_baixada
+     Pergunta:"A alavanca Zif está baixada?"
+  Variável:autofalante_confiavel
+     Pergunta:"O Speaker é confiável?"
+  Variável:bateria_acima_3v
+     Pergunta:"A bateria está acima de 3v?"
+  Variável:bateria_confiavel
+     Pergunta:"A bateria é confiável e/ou foi trocada recentemente?"
+  Variável:bios_atualizada
+     Pergunta:"A BIOS está atualizada?"
+  Variável:bit_pariedade
+     Pergunta:"Está utilizando memória com Bit de Pariedade?"
+  Variável:capacitor_estufado
+     Pergunta:"Algum capacitor está estufado?"
+  Variável:chave_seletora_correto
+     Pergunta:"A chave seletora 110/220 está na posição correta?"
+  Variável:computador_liga
+     Pergunta:"O computador inicia o sistema operacional?"
+     Motivo:"Por enquanto só vamos resolver problemas antes do boot do SO.
+  Variável:dvd_confiavel
+     Pergunta:"O Leitor de DVD funciona em outra máquina confiável?"
+  Variável:faz_bip
+     Pergunta:"Faz algum bip ao iniciar o boot?"
+  Variável:floppy_confiavel
+     Pergunta:"O Leitor Floppy funciona em outra máquina confiável?"
+  Variável:hd_confiavel
+     Pergunta:"O HD funciona em outra máquina confiável?"
+  Variável:jumper_correto
+     Pergunta:"A posição do jumper CLEAR CMOS está correta?"
+  Variável:memorias_confiaveis
+     Pergunta:"As memórias funcionam em outra máquina confiável?"
+  Variável:monitor_confiavel
+     Pergunta:"O monitor está devidamente conectado e é confiável?"
+  Variável:overclok_ativado
+     Pergunta:"O overclock está ativado?"
+  Variável:partida_direta_ok
+     Pergunta:"A partida direta funciona?"
+  Variável:processador_confiavel
+     Pergunta:"O processador funciona em outra máquina?"
+  Variável:qtd_bipes_curtos
+     Pergunta:"Quantos bipes curtos?"
+  Variável:qtd_bipes_longos
+     Pergunta:"Quantos bipes longos?"
+  Variável:tensao_cabo
+     Pergunta:"Há tensão no cabo de energia?"
+  Variável:tensao_estabilizador
+     Pergunta:"Há tensão no estabilizador?"
+  Variável:tensao_tomadas
+     Pergunta:"Há tensão nas tomadas?"
+  Variável:tipo_bip
+     Pergunta:"Qual tipo de bip?"
+  Variável:usa_pci
+     Pergunta:"O computador usa placas nos slots PCI/AGP/PCI-Express?"
 
 --------------------------------------------------------------------------------
 Gerado com o Expert SINTA versão 1.1b

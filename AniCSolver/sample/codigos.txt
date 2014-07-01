@@ -1,121 +1,359 @@
 --------------------------------------------------------------------------------
 CÓDIGOS INTERNOS DE BASE DE CONHECIMENTO
 SOBRE O SISTEMA ESPECIALISTA
-  -- Nome:    SEM NOME
-  -- Autores: 
+  -- Nome:    Relação de problemas de Hardware
+  -- Autores: ~Wesley A.Lemos e ~Felipe Amaral
+  -- Resumo:
+     =-=-=-=-=-=-=-=-=-=--
+     Anihardware         /
+     -=-=-=-=-=-=-=-=-=-
+     
+     Trabalho equivalente a obtensão de nota relativa à
+     disciplica de Inteligência Artificial, sob orientação de ~Sabrina Bet
+     
+     Link para o fluxo do sistema: 
+     https://www.examtime.com/pt-BR/mind_maps/1015829/
+     
+     7ª fase 
+     Sistemas de informação
+     UNIPLAC 
 
-SOBRE OS ARQUIVOS
-  Arquivo original: D:\DROPBOX\UNIPLAC\IA\ATIVIDADES\VINHOS.BCM
-  O sistema não possui recursos de ajuda.
 --------------------------------------------------------------------------------
 
 Variáveis - CÓDIGO, NOME
 
-1, Vinho
-2, Cor
-3, Tipo
-4, Molho
-5, TemMolho
-6, Prato
+1, computador_liga
+2, faz_bip
+3, autofalante_confiavel
+4, partida_direta_ok
+5, bateria_acima_3v
+6, tensao_cabo
+7, tensao_tomadas
+8, tensao_estabilizador
+9, chave_seletora_correto
+10, jumper_correto
+11, memorias_confiaveis
+12, usa_pci
+13, capacitor_estufado
+14, processador_confiavel
+15, floppy_confiavel
+16, dvd_confiavel
+17, hd_confiavel
+18, tipo_bip
+19, overclok_ativado
+20, bios_atualizada
+21, alavanca_zif_baixada
+22, monitor_confiavel
+23, qtd_bipes_curtos
+24, qtd_bipes_longos
+25, bateria_confiavel
+26, bit_pariedade
+27, solucao
 
 Variáveis - NOME, CÓDIGO
 
-Cor, 2
-Molho, 4
-Prato, 6
-TemMolho, 5
-Tipo, 3
-Vinho, 1
+alavanca_zif_baixada, 21
+autofalante_confiavel, 3
+bateria_acima_3v, 5
+bateria_confiavel, 25
+bios_atualizada, 20
+bit_pariedade, 26
+capacitor_estufado, 13
+chave_seletora_correto, 9
+computador_liga, 1
+dvd_confiavel, 16
+faz_bip, 2
+floppy_confiavel, 15
+hd_confiavel, 17
+jumper_correto, 10
+memorias_confiaveis, 11
+monitor_confiavel, 22
+overclok_ativado, 19
+partida_direta_ok, 4
+processador_confiavel, 14
+qtd_bipes_curtos, 23
+qtd_bipes_longos, 24
+solucao, 27
+tensao_cabo, 6
+tensao_estabilizador, 8
+tensao_tomadas, 7
+tipo_bip, 18
+usa_pci, 12
 
 Valores - CÓDIGO, NOME, CÓDIGO DA VARIÁVEL, POSIÇÃO
 
-1, Cabernet Sauvignon, 1, 1
-2, Riesling, 1, 2
-3, Pinot Noir, 1, 3
-4, Sauvignon Blanc, 1, 4
-5, Branco, 2, 1
-6, Tinto, 2, 2
-7, Seco, 3, 1
-8, Suave, 3, 2
-9, Tomate, 4, 1
-10, Picante, 4, 2
-11, Frango, 6, 1
-12, Peixe, 6, 2
-13, Massa, 6, 3
-14, CarneVermelha, 6, 4
+1, curtos, 18, 1
+2, longos, 18, 2
+3, ambos, 18, 3
+4, 1 bip curto, 23, 1
+5, 2 bips curtos, 23, 2
+6, 5 bips curtos, 23, 3
+7, 6 bips curtos, 23, 4
+8, 7 bips curtos, 23, 5
+9, 8 bips curtos, 23, 6
+10, 9 bips curtos, 23, 7
+11, 10 bips curtos, 23, 8
+12, 11 bips curtos, 23, 9
+13, 1 bip longo, 24, 1
+14, 2 bips longo, 24, 2
+15, 3 bips longo, 24, 3
+16, 4 bips longo, 24, 4
+17, Trocar Memórias, 27, 2
+18, Trocar Estabilizador, 27, 3
+19, Trocar Cabo de Energia, 27, 4
+20, Trocar Leitor de DVD, 27, 5
+21, Trocar Floppy, 27, 6
+22, Trocar Bateria, 27, 7
+23, Trocar Monitor, 27, 8
+24, Trocar Capacitores, 27, 9
+25, Trocar Jumper, 27, 10
+26, Trocar BIOS, 27, 12
+27, Trocar Chipset, 27, 13
+28, Trocar Processador, 27, 11
+29, Verificar Placas PCI  AGP ou PCI-Express, 27, 15
+30, Verificar Frequencia do Processador, 27, 16
+31, Verificar Tomada ou Disjuntor, 27, 17
+32, Verificar Conectores da Placa-mãe, 27, 18
+33, Atualizar BIOS, 27, 19
+34, Limpar Memorias, 27, 20
+35, Aspirar Slots das memorias, 27, 21
+36, Limpar Placa de Video, 27, 22
+37, Corrigir Alavanaca Zif, 27, 23
+38, Corrigir Posição da Chave Seletora, 27, 24
+39, Corrigir Jumper, 27, 25
+40, Corrigir Autofalante, 27, 26
+41, Desativar Parity Check no Setup, 27, 27
+42, Aumentar Timeout do Cache, 27, 28
+43, Corrigir Frequencia do Processador, 27, 29
+44, Verificar Conectores de Vídeo, 27, 14
+45, Trocar HD, 27, 1
+46, Resolvido, 27, 30
+47, Trocar Placa-mãe, 27, 31
 
 Valores - NOME, CÓDIGO, CÓDIGO DA VARIÁVEL, POSIÇÃO
 
-Branco, 5, 2, 1
-Cabernet Sauvignon, 1, 1, 1
-CarneVermelha, 14, 6, 4
-Frango, 11, 6, 1
-Massa, 13, 6, 3
-Peixe, 12, 6, 2
-Picante, 10, 4, 2
-Pinot Noir, 3, 1, 3
-Riesling, 2, 1, 2
-Sauvignon Blanc, 4, 1, 4
-Seco, 7, 3, 1
-Suave, 8, 3, 2
-Tinto, 6, 2, 2
-Tomate, 9, 4, 1
+Trocar BIOS, 26, 27, 12
+Trocar Cabo de Energia, 19, 27, 4
+1 bip curto, 4, 23, 1
+1 bip longo, 13, 24, 1
+10 bips curtos, 11, 23, 8
+11 bips curtos, 12, 23, 9
+2 bips curtos, 5, 23, 2
+2 bips longo, 14, 24, 2
+3 bips longo, 15, 24, 3
+4 bips longo, 16, 24, 4
+5 bips curtos, 6, 23, 3
+6 bips curtos, 7, 23, 4
+7 bips curtos, 8, 23, 5
+8 bips curtos, 9, 23, 6
+9 bips curtos, 10, 23, 7
+Aspirar Slots das memorias, 35, 27, 21
+ambos, 3, 18, 3
+Atualizar BIOS, 33, 27, 19
+Aumentar Timeout do Cache, 42, 27, 28
+Corrigir Alavanaca Zif, 37, 27, 23
+Corrigir Autofalante, 40, 27, 26
+Corrigir Frequencia do Processador, 43, 27, 29
+Corrigir Jumper, 39, 27, 25
+Corrigir Posição da Chave Seletora, 38, 27, 24
+Desativar Parity Check no Setup, 41, 27, 27
+Corrigir Frequencia do Processador, 43, 27, 29
+curtos, 1, 18, 1
+Corrigir Autofalante, 40, 27, 26
+Limpar Memorias, 34, 27, 20
+Limpar Placa de Video, 36, 27, 22
+Resolvido, 46, 27, 30
+longos, 2, 18, 2
+Trocar Bateria, 22, 27, 7
+Trocar Capacitores, 24, 27, 9
+Trocar Chipset, 27, 27, 13
+Trocar Estabilizador, 18, 27, 3
+Trocar Floppy, 21, 27, 6
+Trocar HD, 45, 27, 1
+Trocar Jumper, 25, 27, 10
+Trocar Leitor de DVD, 20, 27, 5
+Trocar Memórias, 17, 27, 2
+Trocar Monitor, 23, 27, 8
+Trocar Placa-mãe, 47, 27, 31
+Trocar Processador, 28, 27, 11
+Verificar Conectores da Placa-mãe, 32, 27, 18
+Verificar Conectores de Vídeo, 44, 27, 14
+Verificar Frequencia do Processador, 30, 27, 16
+Verificar Placas PCI  AGP ou PCI-Express, 29, 27, 15
+Verificar Tomada ou Disjuntor, 31, 27, 17
 
 Valores - CÓDIGO DA VARIÁVEL, CÓDIGO, NOME, POSIÇÃO
 
-1, 4, Sauvignon Blanc, 4
-1, 2, Riesling, 2
-1, 3, Pinot Noir, 3
-1, 1, Cabernet Sauvignon, 1
-2, 6, Tinto, 2
-2, 5, Branco, 1
-3, 8, Suave, 2
-3, 7, Seco, 1
-4, 10, Picante, 2
-4, 9, Tomate, 1
-6, 12, Peixe, 2
-6, 14, CarneVermelha, 4
-6, 11, Frango, 1
-6, 13, Massa, 3
+18, 2, longos, 2
+18, 3, ambos, 3
+18, 1, curtos, 1
+23, 12, 11 bips curtos, 9
+23, 10, 9 bips curtos, 7
+23, 8, 7 bips curtos, 5
+23, 6, 5 bips curtos, 3
+23, 4, 1 bip curto, 1
+23, 11, 10 bips curtos, 8
+23, 9, 8 bips curtos, 6
+23, 7, 6 bips curtos, 4
+23, 5, 2 bips curtos, 2
+24, 16, 4 bips longo, 4
+24, 14, 2 bips longo, 2
+24, 15, 3 bips longo, 3
+24, 13, 1 bip longo, 1
+27, 24, Trocar Capacitores, 9
+27, 26, Trocar BIOS, 12
+27, 22, Trocar Bateria, 7
+27, 28, Trocar Processador, 11
+27, 20, Trocar Leitor de DVD, 5
+27, 30, Verificar Frequencia do Processador, 16
+27, 18, Trocar Estabilizador, 3
+27, 32, Verificar Conectores da Placa-mãe, 18
+27, 34, Limpar Memorias, 20
+27, 36, Limpar Placa de Video, 22
+27, 38, Corrigir Posição da Chave Seletora, 24
+27, 42, Aumentar Timeout do Cache, 28
+27, 44, Verificar Conectores de Vídeo, 14
+27, 46, Resolvido, 30
+27, 23, Trocar Monitor, 8
+27, 25, Trocar Jumper, 10
+27, 21, Trocar Floppy, 6
+27, 27, Trocar Chipset, 13
+27, 19, Trocar Cabo de Energia, 4
+27, 29, Verificar Placas PCI  AGP ou PCI-Express, 15
+27, 17, Trocar Memórias, 2
+27, 31, Verificar Tomada ou Disjuntor, 17
+27, 33, Atualizar BIOS, 19
+27, 35, Aspirar Slots das memorias, 21
+27, 37, Corrigir Alavanaca Zif, 23
+27, 39, Corrigir Jumper, 25
+27, 41, Desativar Parity Check no Setup, 27
+27, 45, Trocar HD, 1
+27, 47, Trocar Placa-mãe, 31
+27, 40, Corrigir Autofalante, 26
+27, 43, Corrigir Frequencia do Processador, 29
 
 Regras - POSIÇÃO, NOME, CÓDIGO
 
-1, Carne Tinta, 1
-2, Frango Peixe Branco, 2
-3, Sem molho suave, 3
-4, Molho picante suave, 4
-5, Molho tomate seco, 5
-6, massa cabernet, 6
-7, branco suave riesling, 7
-8, branco seco blane, 8
-9, tinto suave pinot, 9
-10, tinto seco cabenet, 10
+1, Objetivo Concluido, 1
+2, Corrigir Autofalante, 2
+3, Trocar Cabo, 3
+4, Trocar Estabilizador, 4
+5, Verificar Tomada, 5
+6, Corrigir Chave Seletora, 6
+7, Trocar Memorias, 7
+8, Limpar PCI AGP, 8
+9, Trocar HD, 9
+10, Trocar Floppy, 10
+11, Trocar DVD, 11
+12, Trocar Bateira, 12
+13, Trocar Capacitor, 13
+14, Trocar processador, 16
+15, Corrigir Jumper, 14
+16, Trocar Jumper, 15
+17, Trocar Placa Mãe, 17
+18, Falha no Video, 18
+19, 1L - Refresh Failure, 19
+20, 2L - Parity Error on, 20
+21, 3L - Parity Error on, 37
+22, 2L - Parity Error off, 21
+23, 3L - Parity Error off, 38
+24, 4L - Timer não operacional, 22
+25, 1C - Monitor on, 23
+26, 1C - Monitor off, 24
+27, 2C - Bad Contact, 25
+28, 5C - Processor Zif on, 26
+29, 5C - Processor Zif off, 27
+30, 5C - Gate A20 failure, 28
+31, 7C - Proccess Overclock on, 29
+32, 7C - Proccess Overclock off, 30
+33, 8C - Display memory error, 31
+34, 9C - Rom Checksum Downdate, 32
+35, 9C - Rom Checksum Update 3v, 33
+36, 9C - Rom Checksum Update 1v, 34
+37, 10C - CMOS shutdown register, 35
+38, 11C - Cache Memory Bad, 36
 
 Regras - CÓDIGO, NOME, POSIÇÃO
 
-1, Carne Tinta, 1
-2, Frango Peixe Branco, 2
-3, Sem molho suave, 3
-4, Molho picante suave, 4
-5, Molho tomate seco, 5
-6, massa cabernet, 6
-7, branco suave riesling, 7
-8, branco seco blane, 8
-9, tinto suave pinot, 9
-10, tinto seco cabenet, 10
+1, Objetivo Concluido, 1
+2, Corrigir Autofalante, 2
+3, Trocar Cabo, 3
+4, Trocar Estabilizador, 4
+5, Verificar Tomada, 5
+6, Corrigir Chave Seletora, 6
+7, Trocar Memorias, 7
+8, Limpar PCI AGP, 8
+9, Trocar HD, 9
+10, Trocar Floppy, 10
+11, Trocar DVD, 11
+12, Trocar Bateira, 12
+13, Trocar Capacitor, 13
+14, Corrigir Jumper, 15
+15, Trocar Jumper, 16
+16, Trocar processador, 14
+17, Trocar Placa Mãe, 17
+18, Falha no Video, 18
+19, 1L - Refresh Failure, 19
+20, 2L - Parity Error on, 20
+21, 2L - Parity Error off, 22
+22, 4L - Timer não operacional, 24
+23, 1C - Monitor on, 25
+24, 1C - Monitor off, 26
+25, 2C - Bad Contact, 27
+26, 5C - Processor Zif on, 28
+27, 5C - Processor Zif off, 29
+28, 5C - Gate A20 failure, 30
+29, 7C - Proccess Overclock on, 31
+30, 7C - Proccess Overclock off, 32
+31, 8C - Display memory error, 33
+32, 9C - Rom Checksum Downdate, 34
+33, 9C - Rom Checksum Update 3v, 35
+34, 9C - Rom Checksum Update 1v, 36
+35, 10C - CMOS shutdown register, 37
+36, 11C - Cache Memory Bad, 38
+37, 3L - Parity Error on, 21
+38, 3L - Parity Error off, 23
 
 Regras - NOME, CÓDIGO, POSIÇÃO
 
-Frango Peixe Branco, 2, 2
-Carne Tinta, 1, 1
-branco suave riesling, 7, 7
-branco seco blane, 8, 8
-Molho picante suave, 4, 4
-Molho tomate seco, 5, 5
-Sem molho suave, 3, 3
-tinto seco cabenet, 10, 10
-tinto suave pinot, 9, 9
-massa cabernet, 6, 6
+10C - CMOS shutdown register, 35, 37
+11C - Cache Memory Bad, 36, 38
+1C - Monitor off, 24, 26
+1C - Monitor on, 23, 25
+1L - Refresh Failure, 19, 19
+2C - Bad Contact, 25, 27
+2L - Parity Error off, 21, 22
+2L - Parity Error on, 20, 20
+3L - Parity Error off, 38, 23
+3L - Parity Error on, 37, 21
+4L - Timer não operacional, 22, 24
+5C - Gate A20 failure, 28, 30
+5C - Processor Zif off, 27, 29
+5C - Processor Zif on, 26, 28
+7C - Proccess Overclock off, 30, 32
+7C - Proccess Overclock on, 29, 31
+8C - Display memory error, 31, 33
+9C - Rom Checksum Downdate, 32, 34
+9C - Rom Checksum Update 1v, 34, 36
+9C - Rom Checksum Update 3v, 33, 35
+Corrigir Autofalante, 2, 2
+Corrigir Chave Seletora, 6, 6
+Corrigir Jumper, 14, 15
+Falha no Video, 18, 18
+Limpar PCI AGP, 8, 8
+Objetivo Concluido, 1, 1
+Trocar Bateira, 12, 12
+Trocar Cabo, 3, 3
+Trocar Capacitor, 13, 13
+Trocar DVD, 11, 11
+Trocar Estabilizador, 4, 4
+Trocar Floppy, 10, 10
+Trocar HD, 9, 9
+Trocar Jumper, 15, 16
+Trocar Memorias, 7, 7
+Trocar Placa Mãe, 17, 17
+Trocar processador, 16, 14
+Verificar Tomada, 5, 5
 
 --------------------------------------------------------------------------------
 Gerado com o Expert SINTA versão 1.1b
