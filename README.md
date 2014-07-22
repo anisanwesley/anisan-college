@@ -1,9 +1,8 @@
 Select Language: **English**, [Portuguese](https://github.com/AnisanWesley/anisan-college/blob/master/README-pt.md)
 
-anisan-college
-==============
+![anisan-college](https://raw.githubusercontent.com/AnisanWesley/anisan-core/master/images/logos/anisan-college.png)
 
-For college work, I'll put here whatever evolved during the course of Information Systems in Uniplac 
+####For college work, whatever evolved during the course of Information Systems in Uniplac
 
 #### Projects in this repository 
 * Anisoket 
@@ -15,4 +14,4 @@ For college work, I'll put here whatever evolved during the course of Informatio
 
 
 
-Lages - SC
+[![anisan](https://raw.githubusercontent.com/AnisanWesley/anisan-core/master/images/logos/avatar48x48.jpg)](https://github.com/AnisanWesley/anisan-core)

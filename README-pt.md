@@ -1,9 +1,8 @@
 Select Language: [English](https://github.com/AnisanWesley/anisan-college/), **Portuguese**
 
-anisan-college
-==============
+![anisan-college](https://raw.githubusercontent.com/AnisanWesley/anisan-core/master/images/logos/anisan-college.png)
 
-Para trabalhos de faculdade, vou colocar aqui o que for evoluindo ao decorrer do curso de Sistemas de Informação na Uniplac
+####Para trabalhos de faculdade, e o que for evoluindo ao decorrer do curso de Sistemas de Informação na Uniplac
 
 ####Projetos neste repositório
 * Anisoket
@@ -13,6 +12,4 @@ Para trabalhos de faculdade, vou colocar aqui o que for evoluindo ao decorrer do
   *	Sheel complementar para o Expert Sinta
   *	Lê os arquivos "base" e "codigos" gerados pelo Expert Sinta e traduz em uma interface simples de ser navegada
 
-
-
-Lages - SC
+[![anisan](https://raw.githubusercontent.com/AnisanWesley/anisan-core/master/images/logos/avatar48x48.jpg)](https://github.com/AnisanWesley/anisan-core)
