@@ -1,0 +1,228 @@
+﻿<!DOCTYPE html>
+<html ng-app="websql">
+<head>
+    <title>WebSQL</title>
+    <!--Bibliotecas-->
+    <link href="lib/bootstrap.css" rel="stylesheet" />
+    <link href="lib/toastr.css" rel="stylesheet" />
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/angular.js"></script>
+    <script src="lib/toastr.js"></script>
+
+    <!--Meus arquivos-->
+    <script src="src/SQLController.js"></script>
+    <script src="src/SQLFactory.js"></script>
+    <script src="src/SQLManager.js"></script>
+    <script src="src/app.js"></script>
+</head>
+<body ng-controller="SQLController as ctrl">
+
+    <div class="container-fluid">
+        <div class="row" ng-hide="ctrl.supported">
+            <div class="alert alert-warning">
+                <h1 class="lead">WebSQL não suportado!</h1>
+            </div>
+        </div>
+
+
+        <!--
+
+            CREATE TABLE
+
+            -->
+        <div class="row" ng-show='ctrl.supported'>
+            <div class="col-sm-6 bg-success">
+                <h1>Manipulação</h1>
+                <p class="lead">Create Table</p>
+                <div class="input-group">
+                    <span class="input-group-addon">Tabela</span>
+                    <input type="text" class="form-control"
+                           ng-model="ctrl.create.table">
+                </div>
+                &nbsp;
+                <div class="input-group" ng-repeat="column in ctrl.create.columns">
+                    <span class="input-group-addon">Coluna</span>
+                    <input type="text" class="form-control" ng-model='column.name'>
+                    <span class="btn-danger btn input-group-addon"
+                          ng-click="ctrl.create.columns.splice($index,1)">Del</span>
+                </div>
+                &nbsp;
+                <div class="btn-group btn-group-justified">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-info"
+                                ng-click="ctrl.create.columns.push({})">
+                            Adicionar Campo
+                        </button>
+                    </div>
+                </div>
+                &nbsp;
+                <div class="btn-group btn-group-justified">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-success"
+                                ng-click="ctrl.execute('create')">
+                            Commit
+                        </button>
+                    </div>
+                </div>&nbsp;
+                <hr>
+                <!--
+
+                INSERT
+
+                -->
+
+                <p class="lead">Insert</p>
+                <div class="input-group">
+                    <span class="input-group-addon">Table Name</span>
+                    <input type="text" class="form-control" placeholder="TABLE_NAME"
+                           ng-model="ctrl.insert.table">
+                </div>
+                &nbsp;
+                <div class="input-group" ng-repeat="column in ctrl.insert.columns">
+                    <span class="input-group-addon ">Column Name</span>
+                    <input type="text" class="form-control" placeholder="Name" ng-model='column.name'>
+                    <span class="input-group-addon">Column Data</span>
+                    <input type="text" class="form-control" placeholder="'Subject'" ng-model='column.data'>
+                    <span class="btn-danger btn input-group-addon"
+                          ng-click="ctrl.insert.columns.splice($index,1)">Del</span>
+                </div>
+                &nbsp;
+                <div class="btn-group btn-group-justified">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-info" ng-click="ctrl.insert.columns.push({})">Adicionar Valor</button>
+                    </div>
+                </div>
+                &nbsp;
+                <div class="btn-group btn-group-justified">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-success"
+                                ng-click="ctrl.execute('insert')">
+                            Commit
+                        </button>
+                    </div>
+                </div>
+                <hr />
+               
+                &nbsp;
+
+                <!--
+
+
+                    DELETE
+
+                    -->
+                <p class="lead">Delete</p>
+                <div class="input-group">
+                    <span class="input-group-addon">Tabela</span>
+                    <input type="text" class="form-control"
+                           ng-model="ctrl.delete.table">
+                </div>                &nbsp;
+
+                <div class="input-group" ng-repeat="condition in ctrl.delete.conditions">
+                    <span class="input-group-addon">Condição</span>
+                    <input type="text" class="form-control" ng-model='condition.name' placeholder="AND condition">
+                    <span class="btn-danger btn input-group-addon"
+                          ng-click="ctrl.delete.conditions.splice($index,1)">Del</span>
+                </div>
+                &nbsp;
+                <div class="btn-group btn-group-justified">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-info"
+                                ng-click="ctrl.delete.conditions.push({})">
+                            Adicionar condição
+                        </button>
+                    </div>
+                </div>
+                &nbsp;
+                <div class="btn-group btn-group-justified">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-success"
+                                ng-click="ctrl.execute('delete')">
+                            Commit
+                        </button>
+                    </div>
+                </div>
+                &nbsp;
+                <!--
+
+       DROP
+
+       -->
+
+                <p class="lead">Drop</p>
+                <div class="input-group">
+                    <span class="input-group-addon">Table Name</span>
+                    <input type="text" class="form-control" placeholder="TABLE_NAME"
+                           ng-model="ctrl.drop.table">
+                </div>
+                &nbsp;
+                <div class="btn-group btn-group-justified">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-success"
+                                ng-click="ctrl.execute('drop')">
+                            Commit
+                        </button>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-sm-6 bg-info">
+                <h1>Resultados</h1>
+
+                <!---
+
+                    SELECT
+
+                    -->
+
+                <div class="input-group">
+                    <span class="input-group-addon">Tabela</span>
+                    <input type="text" class="form-control"
+                           ng-model="ctrl.select.table">
+                </div>                &nbsp;
+                <div class="input-group">
+                    <span class="input-group-addon">Campos</span>
+                    <input type="text" class="form-control" ng-model='ctrl.select.columns' placeholder="*">
+                </div>                &nbsp;
+                <div class="input-group" ng-repeat="condition in ctrl.select.conditions">
+                    <span class="input-group-addon">Condição</span>
+                    <input type="text" class="form-control" ng-model='condition.name' placeholder="AND condition">
+                    <span class="btn-danger btn input-group-addon"
+                          ng-click="ctrl.select.conditions.splice($index,1)">Del</span>
+                </div>
+                &nbsp;
+                <div class="btn-group btn-group-justified">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-info"
+                                ng-click="ctrl.select.conditions.push({})">
+                            Adicionar condição
+                        </button>
+                    </div>
+                </div>
+                &nbsp;
+                <div class="btn-group btn-group-justified">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-success"
+                                ng-click="ctrl.execute('select')">
+                            Select
+                        </button>
+                    </div>
+                </div>
+                &nbsp;
+
+                <div id="container">
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+</body>
+</html>
