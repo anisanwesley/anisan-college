@@ -90,6 +90,7 @@ function SQLFactory() {
         var sql = "";
         for (var i in array) {
             var item = array[i];
+			if(typeof item ==='function') continue;
             sql += i === '0' ? "" : ", ";
             sql += item[property] + " ";
         }
