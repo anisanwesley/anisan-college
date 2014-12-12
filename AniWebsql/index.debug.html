@@ -1,0 +1,232 @@
+﻿<!DOCTYPE html>
+<html ng-app="websql">
+<head>
+
+
+
+    <!---------
+
+        DEBUG.HTML
+        
+        é o mesmo html, só que sem as classes de CSS melhorando a visibilidade
+
+
+        -->
+
+
+
+    <title>WebSQL</title>
+    <!--Bibliotecas-->
+    <script src="lib/angular.js"></script>
+
+    <!--Meus arquivos-->
+    <script src="src/SQLController.js"></script>
+    <script src="src/SQLFactory.js"></script>
+    <script src="src/SQLManager.js"></script>
+    <script src="src/app.js"></script>
+</head>
+<body ng-controller="SQLController as ctrl">
+
+    <div>
+        <div ng-hide="ctrl.supported">
+            <h1>WebSQL não suportado!</h1>
+        </div>
+
+
+        <!--
+
+            CREATE TABLE
+
+            -->
+        <div   ng-show='ctrl.supported'>
+            <div >
+                <h1>Manipulação</h1>
+                <p >Create Table</p>
+                <div>
+                    <span  >Tabela</span>
+                    <input type="text"  ng-model="ctrl.create.table">
+                </div>
+                &nbsp;
+                <div   ng-repeat="column in ctrl.create">
+                    <span  >Coluna</span>
+                    <input type="text" ng-model='column.name'>
+                    <span  
+                        ng-click="ctrl.create.columns.splice($index,1)">Del</span>
+                </div>
+                &nbsp;
+                <div  >
+                    <div   role="group">
+                        <button type="button"  
+                                ng-click="ctrl.create.columns.push({})">
+                            Adicionar Campo
+                        </button>
+                    </div>
+                </div>
+                &nbsp;
+                <div  >
+                    <div   role="group">
+                        <button type="button"  
+                                ng-click="ctrl.execute('create')">
+                            Commit
+                        </button>
+                    </div>
+                </div>&nbsp;
+                <hr>
+                <!--
+
+                    INSERT
+
+                    -->
+
+                <p  >Insert</p>
+                <div  >
+                    <span  >Table Name</span>
+                    <input type="text"   placeholder="TABLE_NAME"
+                           ng-model="ctrl.insert.table">
+                </div>
+                &nbsp;
+                <div   ng-repeat="column in ctrl.insert.columns">
+                    <span  >Column Name</span>
+                    <input type="text"   placeholder="Name" ng-model='column.name'>
+                    <span  >Column Data</span>
+                    <input type="text"   placeholder="'Subject'" ng-model='column.data'>
+                    <span  
+                        ng-click="ctrl.insert.columns.splice($index,1)">Del</span>
+                </div>
+                &nbsp;
+                <div  >
+                    <div   role="group">
+                        <button type="button"   ng-click="ctrl.insert.columns.push({})">Adicionar Valor</button>
+                    </div>
+                </div>
+                &nbsp;
+                <div  >
+                    <div   role="group">
+                        <button type="button"  
+                                ng-click="ctrl.execute('insert')">
+                            Commit
+                        </button>
+                    </div>
+                </div>
+                <hr />
+
+                &nbsp;
+
+                <!--
+
+
+                    DELETE
+
+                    -->
+                <p  >Delete</p>
+                <div  >
+                    <span  >Tabela</span>
+                    <input type="text"  
+                           ng-model="ctrl.delete.table">
+                </div>                &nbsp;
+
+                <div   ng-repeat="condition in ctrl.delete.conditions">
+                    <span  >Condição</span>
+                    <input type="text"   ng-model='condition.name' placeholder="AND condition">
+                    <span  
+                        ng-click="ctrl.delete.conditions.splice($index,1)">Del</span>
+                </div>
+                &nbsp;
+                <div  >
+                    <div   role="group">
+                        <button type="button"  
+                                ng-click="ctrl.delete.conditions.push({})">
+                            Adicionar condição
+                        </button>
+                    </div>
+                </div>
+                &nbsp;
+                <div  >
+                    <div   role="group">
+                        <button type="button"  
+                                ng-click="ctrl.execute('delete')">
+                            Commit
+                        </button>
+                    </div>
+                </div>
+                &nbsp;
+                <!--
+
+                    DROP
+
+                    -->
+
+                <p  >Drop</p>
+                <div  >
+                    <span  >Table Name</span>
+                    <input type="text"   placeholder="TABLE_NAME"
+                           ng-model="ctrl.drop.table">
+                </div>
+                &nbsp;
+                <div  >
+                    <div   role="group">
+                        <button type="button"  
+                                ng-click="ctrl.execute('drop')">
+                            Commit
+                        </button>
+                    </div>
+                </div>
+
+
+            </div>
+            <div >
+                <h1>Resultados</h1>
+
+                <!---
+
+                    SELECT
+
+                    -->
+
+                <div  >
+                    <span  >Tabela</span>
+                    <input type="text"  
+                           ng-model="ctrl.select.table">
+                </div>                &nbsp;
+                <div  >
+                    <span  >Campos</span>
+                    <input type="text"   ng-model='ctrl.select.columns' placeholder="*">
+                </div>                &nbsp;
+                <div   ng-repeat="condition in ctrl.select.conditions">
+                    <span  >Condição</span>
+                    <input type="text"   ng-model='condition.name' placeholder="AND condition">
+                    <span  
+                        ng-click="ctrl.select.conditions.splice($index,1)">Del</span>
+                </div>
+                &nbsp;
+                <div  >
+                    <div   role="group">
+                        <button type="button"  
+                                ng-click="ctrl.select.conditions.push({})">
+                            Adicionar condição
+                        </button>
+                    </div>
+                </div>
+                &nbsp;
+                <div  >
+                    <div   role="group">
+                        <button type="button"  
+                                ng-click="ctrl.execute('select')">
+                            Select
+                        </button>
+                    </div>
+                </div>
+                &nbsp;
+
+                <div id="container"></div>
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+</body>
+</html>
