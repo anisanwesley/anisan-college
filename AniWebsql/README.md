@@ -13,3 +13,5 @@ Há quatro arquivos principais:
  * Simplemente, retorna a query em formato de string.
 * SQLManager
  * Responsável executar as queries geradas pelo SQLFactory.
+* app
+ * Apenas registra as classes acima no angular, configurando suas respectivas dependencias.
