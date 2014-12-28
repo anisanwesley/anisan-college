@@ -11,5 +11,7 @@ Select Language: [English](https://github.com/AnisanWesley/anisan-college/), **P
 * AniCSolver
   *	Sheel complementar para o Expert Sinta
   *	Lê os arquivos "base" e "codigos" gerados pelo Expert Sinta e traduz em uma interface simples de ser navegada
+* Outros
+  * DatabaseMigrator - Um console simples para converter um banco de dados de Firebird para MSSQL 
 
 [![anisan](https://raw.githubusercontent.com/AnisanWesley/anisan-core/master/images/logos/avatar48x48.jpg)](https://github.com/AnisanWesley/anisan-core)
