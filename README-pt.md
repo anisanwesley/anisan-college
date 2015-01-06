@@ -9,9 +9,11 @@ Select Language: [English](https://github.com/AnisanWesley/anisan-college/), **P
   *	Classes em C# e Java que facilitam o uso de sockets
   *	Resume em 3 linhas o que precisaria de 11 para criar um socket no modelo convencional
 * AniCSolver
-  *	Sheel complementar para o Expert Sinta
+  *	Shell complementar para o Expert Sinta
   *	Lê os arquivos "base" e "codigos" gerados pelo Expert Sinta e traduz em uma interface simples de ser navegada
-* Outros
-  * DatabaseMigrator - Um console simples para converter um banco de dados de Firebird para MSSQL 
+* AniWebSql 
+  *  Interface fácil para construir e executar comandos sql via inputs html
+* DatabaseMigrator
+  *  Simples console para converter um banco Firebird para MSSQL
 
 [![anisan](https://raw.githubusercontent.com/AnisanWesley/anisan-core/master/images/logos/avatar48x48.jpg)](https://github.com/AnisanWesley/anisan-core)
