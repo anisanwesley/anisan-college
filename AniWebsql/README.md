@@ -15,3 +15,8 @@ Há quatro arquivos principais:
  * Responsável executar as queries geradas pelo SQLFactory.
 * app
  * Apenas registra as classes acima no angular, configurando suas respectivas dependencias.
+
+
+*Nota*: 
+* O arquivo `index.html` é aquele cheio de classes do bootstrap, a versão completa
+* O arquivo `index.debug.html` é simplesmente o mesmo index, só que sem estilo, adaptado para melhor visualizar a implementação do comportamento da aplicação
