@@ -36,7 +36,7 @@ namespace Anichat
             if (readLine != null) _hasColor = readLine.ToLower()=="s";
 
             Console.WriteLine("Pegando IPs disponiveis... ");
-            var ips = _soketClient.GetLocalIp();
+            var ips = SoketSupport.GetLocalIp();
             Console.WriteLine("Digite qual localhost deseja utilizar:");
             for (int index = 0; index < ips.Length; index++)
             {
