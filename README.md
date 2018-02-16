@@ -1,6 +1,5 @@
 Select Language: **English**, [Portuguese](https://github.com/AnisanWesley/anisan-college/blob/master/README-pt.md)
 
-![anisan-college](https://raw.githubusercontent.com/AnisanWesley/anisan-core/master/images/logos/anisan-college.png)
 
 ####For college work, whatever evolved during the course of Information Systems in Uniplac
 
@@ -17,5 +16,3 @@ Select Language: **English**, [Portuguese](https://github.com/AnisanWesley/anisa
   *  A little console app to convert a Firebird to MSSQL database
 
 
-
-[![anisan](https://raw.githubusercontent.com/AnisanWesley/anisan-core/master/images/logos/avatar48x48.jpg)](https://github.com/AnisanWesley/anisan-core)
